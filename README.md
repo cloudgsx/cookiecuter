@@ -1,5 +1,6 @@
 
 
+
 # Cookiecuter
 Cookiecutter is a templating library for creating boilerplate for projects in any programming language. More info at https://www.cookiecutter.io
 
@@ -41,6 +42,8 @@ To generate a new Node.js website project:
 
 1.  Run the following command inside the Docker container: `cookiecutter /usr/src/app/cookiecutter-node-website`
 2. Enter the required details when prompted, such as the project name, author name, and description. The project will be generated in the current directory.
+3. cd into the created folder and run `python3 create_node_website.py`
+4. Once created, cd into the new folder and run` npm install && npm start`
 
 ### Terraform EC2 Instance
 To generate a Terraform project for deploying an EC2 instance on AWS:
