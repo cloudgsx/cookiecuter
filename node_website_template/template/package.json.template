@@ -1,0 +1,12 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "version": "1.0.0",
+  "description": "{{cookiecutter.description}}",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "{{cookiecutter.author_name}}",
+  "license": "MIT"
+}
+
