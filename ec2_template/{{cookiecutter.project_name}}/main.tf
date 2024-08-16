@@ -10,16 +10,25 @@ terraform {
 }
 
 provider "aws" {
-  region = "{{ cookiecutter.aws_region }}"
+  region = var.aws_region
 }
 
-resource "aws_instance" "{{ cookiecutter.instance_name }}" {
-  ami           = "{{ cookiecutter.ami_id }}"
-  instance_type = "{{ cookiecutter.instance_type }}"
-  key_name      = "{{ cookiecutter.key_name }}"
+resource "aws_instance" "ec2_instance" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  key_name      = var.key_name
 
   tags = {
-    Name = "{{ cookiecutter.instance_name }}"
+    Name = var.instance_name
   }
 }
 
+output "instance_id" {
+  description = "The ID of the EC2 instance"
+  value       = aws_instance.ec2_instance.id
+}
+
+output "public_ip" {
+  description = "The public IP address of the EC2 instance"
+  value       = aws_instance.ec2_instance.public_ip
+}
